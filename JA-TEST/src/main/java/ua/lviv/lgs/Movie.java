@@ -1,4 +1,4 @@
-package ua.lviv.lgs.main;
+package ua.lviv.lgs;
 
 public class Movie{
 

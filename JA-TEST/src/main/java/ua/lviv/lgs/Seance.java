@@ -1,4 +1,4 @@
-package ua.lviv.lgs.main;
+package ua.lviv.lgs;
 
 public class Seance implements Comparable<Seance>  {
     private Movie movie;
@@ -9,7 +9,7 @@ public class Seance implements Comparable<Seance>  {
 
         this.movie = movie;
         this.startTime = startTime;
-        this.endTime = startTime.addTime(getMovie().getDuration());
+        this.endTime = startTime.addTime(startTime,movie.getDuration());
     }
 
 

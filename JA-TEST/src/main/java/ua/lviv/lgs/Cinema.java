@@ -1,4 +1,4 @@
-package ua.lviv.lgs.main;
+package ua.lviv.lgs;
 
 import java.util.*;
 
@@ -66,14 +66,14 @@ public class Cinema {
         String movieTitle = scanner.nextLine();
 
         System.out.println("Please enter hours and minutes for film duration = ");
-        int s2 = scanner.nextInt();
-        if (s2 >= 0 && s2 <= 24) {
+        int s1 = scanner.nextInt();
+        if (s1 >= 0 && s1 <= 24) {
         } else {
             throw new IllegalArgumentException("Film duration in hours out of range \"0 - 24\" ");
         }
 
-        int s1 = scanner.nextInt();
-        if (s1 >= 0 && s1 <= 60) {
+        int s2 = scanner.nextInt();
+        if (s2 >= 0 && s2 <= 60) {
         } else {
             throw new IllegalArgumentException("Film duration in minutes out of range \"0 - 60\" min");
         }
@@ -92,12 +92,12 @@ public class Cinema {
         Scanner ss = new Scanner(System.in);
         int startTimeHour = ss.nextInt();
         int startTimeMinute = ss.nextInt();
-        Time time = new Time(startTimeMinute, startTimeHour);
+        Time time = new Time(startTimeHour, startTimeMinute);
 
         System.out.println("Please enter hour and minutes when film ends = ");
         int endTimeHour = ss.nextInt();
         int endTimeMinute = ss.nextInt();
-        Time time1 = new Time(endTimeMinute, endTimeHour);
+        Time time1 = new Time(startTimeHour, startTimeMinute);
 
         Seance seance = new Seance(getMoviesLibrary().listIterator().next(), time);
 

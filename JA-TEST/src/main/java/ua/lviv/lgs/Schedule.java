@@ -1,4 +1,4 @@
-package ua.lviv.lgs.main;
+package ua.lviv.lgs;
 
 import java.util.Set;
 import java.util.TreeSet;

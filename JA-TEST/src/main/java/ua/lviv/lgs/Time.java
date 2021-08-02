@@ -1,4 +1,4 @@
-package ua.lviv.lgs.main;
+package ua.lviv.lgs;
 
 public class Time {
 
@@ -40,32 +40,34 @@ public class Time {
 
 
 
-
-
-
-
-
     public void setMin(int min) {
         this.min = min;
     }
 
 
 
+    public static Time addTime(Time time1, Time time2)  {
+        int hour = time1.getHour() + time2.getHour();
+        int min = time1.getMin() + time2.getMin();
 
-    public Time addTime(Time addedTime) {
-        int resultMin = this.getMin() + addedTime.getMin();
-        int resultHour = this.getHour() + addedTime.getHour();
-        return new Time(resultHour, resultMin);
+        if (min >= 60) {
+            hour = hour + 1;
+            min = min - 60;
+        } else if (hour >= 24) {
+            hour = hour - 24;
+        }
 
+        return new Time(hour, min);
     }
+
+
 
 
     @Override
     public String toString() {
-        return "Time{" +
+        return
                 "hour=" + hour +
-                ", min=" + min +
-                '}';
+                ", min=" + min;
     }
 
 
